@@ -1,10 +1,15 @@
 package com.hcmute.demoapi.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class Category implements Serializable {
+    @SerializedName("categoryId")
     private Integer id;
+    @SerializedName("categoryName")
     private String name;
+    @SerializedName("icon")
     private String image;
     private String description;
 

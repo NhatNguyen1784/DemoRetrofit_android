@@ -28,17 +28,24 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_category, null);
-
         CategoryViewHolder categoryViewHolder = new CategoryViewHolder(view);
+
         return categoryViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
+
         // gan data
         Category cate =  listCategory.get(position);
         holder.txtNameCate.setText(cate.getName());
+
         // load anh voi glide
+        // Test tren local
+//        String urlImage = "http://10.0.2.2:8081/uploads/" + cate.getImage();
+//        Glide.with(context).load(urlImage).into(holder.imgCate);
+
+        // test tren iotstar
         Glide.with(context).load(cate.getImage()).into(holder.imgCate);
     }
 

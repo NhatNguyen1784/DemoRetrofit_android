@@ -1,4 +1,4 @@
-package com.hcmute.demoapi;
+package com.hcmute.demoapi.activity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +11,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hcmute.demoapi.R;
+import com.hcmute.demoapi.RetrofitClient;
 import com.hcmute.demoapi.adapter.CategoryAdapter;
 import com.hcmute.demoapi.api.APIService;
 import com.hcmute.demoapi.model.Category;
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
                 if(response.isSuccessful()){
+//                    Log.d("success", "Thành công");
+//                    Log.d("API Response", new Gson().toJson(listCategory));
                     listCategory = response.body();
                     // tao adapter
                     categoryAdapter = new CategoryAdapter(MainActivity.this, listCategory);

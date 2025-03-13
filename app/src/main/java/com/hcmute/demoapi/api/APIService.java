@@ -8,7 +8,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface APIService {
-
-    @GET("categories")
+    @GET("categories.php")
     Call<List<Category>> getAllCategory();
 }

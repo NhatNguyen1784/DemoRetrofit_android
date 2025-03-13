@@ -9,7 +9,7 @@ public class RetrofitClient {
     public static Retrofit getRetrofit(){
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl("") // duong dan API
+                    .baseUrl("http://app.iotstar.vn:8081/") // duong dan API
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
